@@ -43,7 +43,8 @@ if (!empty($_GET['q'])) {
                 <label for="password">Пароль</label>
                 <input type="password" id="password" required>
             </div>
-            <button type="submit" class="continue-button">Продолжить</button>
+            <!--a href="pages/feed.php" class="continue-button"> Войти </a-->
+            <button onclick="window.location.href='pages/feed.php'" type="submit" class="continue-button">Продолжить</button>
         </form>
     </div>
 </body>

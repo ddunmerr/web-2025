@@ -25,49 +25,41 @@ if (!empty($_GET['q'])) {
 </head>
 
 <body>
-    <div class="v412_53">
-        <div class="v412_54">
-            <div class="name"></div>
-            <div class="name"></div>
-            <div class="name"></div>
+
+    <div class="container">
+        <div id="banner" class=" header"></div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a class="icon icon--home"></a>
+                </li>
+                <li>
+                    <a class="icon icon--profile"></a>
+                </li>
+                <li>
+                    <a class="icon icon--add"></a>
+                </li>
+            </ul>
         </div>
-        <div class="v412_58">
-            <div class="v412_59">
-                <div class="v412_60">
-                    <div class="v412_61"></div>
-                    <div class="name"></div>
-                    <div class="name"></div>
-                    <div class="name"></div>
-                </div><span class="v412_65">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...» </span><span class="v412_66">2 часа назад</span>
-                <div class="name"></div>
-                <div class="v412_68">
-                    <div class="v412_69">
-                        <div class="v412_70">
-                            <div class="v412_71"></div>
-                        </div><span class="v412_72">Ваня Денисов</span>
+
+        <main class="feed">
+            <!-- Контент ленты -->
+            <div class="post">
+                <div class="post-header">
+                    <div class="user">
+                        <div class="user-avatar"></div>
+                        <h1 class="user-name">Ваня денисов</h1>
                     </div>
-                    <div class="name"></div>
-                </div><span class="v412_74">ещё</span>
-            </div>
-            <div class="v412_75">
-                <div class="v412_76">
-                    <div class="v412_77"></div>
-                </div><span class="v412_78">1 день назад</span>
-                <div class="name"></div>
-                <div class="v412_80">
-                    <div class="v412_81">
-                        <div class="v412_82">
-                            <div class="v412_83"></div>
-                        </div><span class="v412_84">Лиза Дёмина</span>
-                    </div>
+                    <div class="edit-button"></div>
+                </div>
+                <div>
+                    <img class="post-image" src="/images/v412_61.png">
                 </div>
             </div>
-        </div>
-        <div class="v412_89">
-            <div class="v412_90"></div>
-            <div class="v412_91"></div>
-        </div>
+        </main>
+
     </div>
+
 </body>
 
 </html>
