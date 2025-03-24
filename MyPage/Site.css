@@ -1,26 +1,25 @@
-html
-{
+html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:rgb(228, 228, 228);
+    background-color: rgb(228, 228, 228);
 }
-p
-{
+
+p {
     font-size: 28px;
 }
-div
-{
+
+div {
     float: left;
     width: max-content;
     height: max-content;
     margin-left: 50px;
 }
-img
-{
+
+img {
     width: 400px;
 }
-header
-{
+
+header {
     height: 100%;
     align-items: center;
-    background-color:rgb(52, 178, 209);
+    background-color: rgb(52, 178, 209);
 }

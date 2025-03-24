@@ -1,0 +1,152 @@
+/* Общие стили */
+body {
+    margin: 0 auto;
+    font-family: 'Golos UI', sans-serif;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+
+.container {
+    position: fixed;
+    width: 1440px;
+    height: 1080px;
+    background: #FFFFFF;
+}
+
+.top {
+    position: relative;
+    left: 71px;
+    width: 1369px;
+    height: 73px;
+    top: 66px;
+    background-color: #E64646;
+}
+
+.left {
+    height: 1080px;
+    position: relative;
+    margin: 0;
+    background-color: #3F8AE0;
+    bottom: 0;
+    width: 72px;
+}
+
+.main {
+    position: relative;
+    left: 178px;
+    top: 92px;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* Изображение на заднем плане */
+.background-image {
+    position: absolute;
+    width: 462.08px;
+    height: 501px;
+    left: 269px;
+    top: 289px;
+    background: url("/images/main_image.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+}
+
+/* Заголовок "Войти" */
+.page-title {
+    position: relative;
+    width: 385px;
+    height: 180px;
+    left: 179px;
+    top: 180px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 140px;
+    line-height: 0px;
+    letter-spacing: -1.5px;
+    color: #222222;
+}
+
+/* Форма входа */
+.login-form {
+    position: absolute;
+    width: 343px;
+    height: 251px;
+    left: 838px;
+    top: 415px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 1;
+}
+
+.field {
+    height: 88px;
+    width: 343px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.field label {
+    font-size: 15px;
+    line-height: 18px;
+    color: #222222;
+    font-weight: 400;
+    letter-spacing: -0.15px;
+}
+
+.field input {
+    padding: 13px 12px;
+    background: #F2F3F5;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    line-height: 18px;
+    color: #222222;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field input:focus {
+    outline-color: #3F8AE0;
+}
+
+.field input:invalid {
+    outline-color: #E64646;
+}
+
+.input-description {
+    font-size: 13px;
+    line-height: 16px;
+    height: 16px;
+    color: #808080;
+    margin: 5px 0 0 0;
+    letter-spacing: -0.08px;
+}
+
+/* Кнопка "Продолжить" */
+.continue-button {
+    padding: 16px 16px;
+    width: 343px;
+    height: 48px;
+    background: #222222;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.continue-button:hover {
+    background: #444444;
+}
