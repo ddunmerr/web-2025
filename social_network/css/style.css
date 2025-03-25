@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Общие стили */
 body {
     margin: 0 auto;
@@ -6,18 +12,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: auto;
+    height: 100%;
+    overflow-y: auto;
 
 }
 
 .container {
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
     position: relative;
-    width: 1440px;
-    height: 1080px;
     background: #FFFFFF;
-    overflow-y: scroll;
-    scrollbar-width: none;
+    padding-right: 17px;
+
 }
 
 
@@ -129,45 +140,35 @@ body {
 /*****************/
 .sidebar {
     width: 72px;
-    height: 1080px;
-    position: absolute;
+    height: 100vh;
+    position: fixed;
+    left: 0;
     top: 0;
     background: #FFFFFF;
     border-right: 1px solid #2222220D
 }
 
-.header {
-    position: sticky;
-    z-index: 100;
-    background: #FFFFFF;
-    width: 1369px;
-    height: 73px;
-    left: 71px;
-    top: 0;
+.icons-list {
+    position: relative;
+    padding: 16px;
+    margin-top: 40px;
+
 }
 
-ul {
-    top: 40px;
-    padding: 16px;
-    position: relative;
+.icons-list ul {
+
     list-style-type: none;
 
 }
 
-li a {
+.icon {
+    display: block;
     width: 40px;
     height: 40px;
-    position: relative;
-    display: block;
-    text-decoration: none;
-}
-
-.icon {
     margin-bottom: 16px;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-
 }
 
 .icon--home {
@@ -182,18 +183,30 @@ li a {
     background-image: url(/icons/add.svg);
 }
 
+/* Шапка */
+.header {
+    width: calc(100% - 72px);
+    height: 73px;
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 73px;
+    z-index: 100;
+}
+
+/* Лента */
 .feed {
-    position: relative;
     width: 474px;
-    height: 1338px;
-    top: 73px;
-    left: 482px;
+    margin: 73px auto 0;
+    padding: 20px;
 }
 
 .post {
-    position: relative;
-    width: 100%;
-    height: 474px;
+    width: 474px;
+    margin-bottom: 30px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .post-header {
@@ -205,14 +218,6 @@ li a {
     justify-content: space-between;
 }
 
-.post-image {
-    position: relative;
-    margin-top: 16px;
-    width: 474px;
-    height: 474px;
-    object-fit: cover;
-
-}
 
 .user {
     display: flex;
@@ -228,9 +233,9 @@ li a {
     position: relative;
     height: 32px;
     width: 32px;
-    background-image: url("/images/v412_71.png");
     background-position: center;
     background-size: cover;
+
     border-radius: 6px;
 }
 
@@ -247,6 +252,22 @@ li a {
     vertical-align: middle;
 }
 
+
+
+.post-text {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.post-time {
+    color: rgba(34, 34, 34, 0.5);
+    font-size: 14px;
+}
+
 .edit-button {
     position: relative;
     height: 24px;
@@ -256,4 +277,49 @@ li a {
     cursor: pointer;
     background-image: url(/icons/edit.svg);
     top: 4px;
+}
+
+.post-image {
+    position: relative;
+    margin-top: 16px;
+    width: 474px;
+    height: 474px;
+    object-fit: cover;
+
+}
+
+.span-reaction {
+    display: flex;
+    flex-direction: row;
+    width: 68px;
+    height: 30px;
+    margin-top: 16px;
+    padding: 6px 12px;
+    gap: 3px;
+    align-items: center;
+    border-radius: 8px;
+    background-color: rgba(34, 34, 34, 0.05);
+}
+
+.like-button {
+    border: none;
+    cursor: pointer;
+    width: 16px;
+    height: 18px;
+    background-image: url(/icons/like.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+#ivan2004 {
+    background-image: url("/images/v412_71.png");
+
+}
+
+#lizadem {
+    background-image: url("/images/v412_83.png");
+
 }
