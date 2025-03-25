@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -18,6 +17,7 @@ body {
 }
 
 .container {
+    flex-direction: column;
     max-width: 1440px;
     width: 100%;
     height: 100%;
@@ -235,7 +235,6 @@ body {
     width: 32px;
     background-position: center;
     background-size: cover;
-
     border-radius: 6px;
 }
 
@@ -251,8 +250,6 @@ body {
     font-weight: 500;
     vertical-align: middle;
 }
-
-
 
 .post-text {
     margin-bottom: 8px;
@@ -289,6 +286,7 @@ body {
 }
 
 .span-reaction {
+    font-size: 15px;
     display: flex;
     flex-direction: row;
     width: 68px;
@@ -296,12 +294,12 @@ body {
     margin-top: 16px;
     padding: 6px 12px;
     gap: 3px;
-    align-items: center;
     border-radius: 8px;
     background-color: rgba(34, 34, 34, 0.05);
 }
 
 .like-button {
+
     border: none;
     cursor: pointer;
     width: 16px;
@@ -313,6 +311,97 @@ body {
 }
 
 
+.profile-header {
+    align-items: center;
+    width: 100%;
+    height: 263px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 97px;
+    justify-content: center;
+}
+
+.profile-avatar {
+    width: 123px;
+    height: 123px;
+    left: 658.5px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.profile-name {
+    width: 361px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+.profile-name h1 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.profile-description {
+    width: 361px;
+    height: 36px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+
+}
+
+.profile-description p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: center;
+}
+
+.posts-count {
+    align-self: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 101px;
+    height: 30px;
+    margin-top: 12px;
+    border-radius: 6px;
+    gap: 6px;
+    background-color: rgba(242, 243, 245, 1)
+}
+
+.posts-count p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: center;
+}
+
+.wall {
+    display: flex;
+    flex-wrap: wrap;
+    width: 972px;
+
+    gap: 2.48px;
+
+    margin-top: 42px;
+    margin-left: 234px;
+}
+
+
+.wall img {
+    width: 322px;
+    height: 322px;
+    border-radius: 2px;
+    object-fit: cover;
+
+}
 
 #ivan2004 {
     background-image: url("/images/v412_71.png");

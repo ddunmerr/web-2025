@@ -31,7 +31,7 @@ if (!empty($_GET['q'])) {
             <div class="icons-list">
                 <ul>
                     <li><a class="icon icon--home"></a></li>
-                    <li><a class="icon icon--profile"></a></li>
+                    <li><a href="/pages/profile.php" class="icon icon--profile"></a></li>
                     <li><a class="icon icon--add"></a></li>
                 </ul>
             </div>
