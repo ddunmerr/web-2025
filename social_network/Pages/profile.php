@@ -1,19 +1,3 @@
-<?php
-if (!empty($_GET['q'])) {
-    $query = htmlspecialchars($_GET['q'], ENT_QUOTES, 'UTF-8');
-
-    switch ($query) {
-        case 'info':
-            phpinfo();
-            exit;
-        default:
-            header("HTTP/1.0 404 Not Found");
-            echo "Invalid query parameter.";
-            exit;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -41,7 +25,7 @@ if (!empty($_GET['q'])) {
 
         <!-- Шапка профиля -->
         <div class="profile-header">
-            <img src="/images/v412_71.png" class="profile-avatar">
+            <img src="/images/v412_71.png" alt="images/avatar.png" class="profile-avatar">
             <div class="profile-name">
                 <h1>Ваня Денисов</h1>
             </div>
@@ -59,15 +43,15 @@ if (!empty($_GET['q'])) {
         </div>
         <!-- Стена профиля -->
         <main class="wall">
-            <img src="/images/1.png">
-            <img src="/images/2.png">
-            <img src="/images/3.png">
-            <img src="/images/4.png">
-            <img src="/images/5.png">
-            <img src="/images/6.png">
-            <img src="/images/7.png">
-            <img src="/images/8.png">
-            <img src="/images/9.png">
+            <img src="/images/1.png" alt="/images/image.png">
+            <img src="/images/2.png" alt="/images/image.png">
+            <img src="/images/3.png" alt="/images/image.png">
+            <img src="/images/4.png" alt="/images/image.png">
+            <img src="/images/5.png" alt="/images/image.png">
+            <img src="/images/6.png" alt="/images/image.png">
+            <img src="/images/1.png" alt="/images/image.png">
+            <img src="/images/2.png" alt="/images/image.png">
+            <img src="/images/3.png" alt="/images/image.png">
         </main>
 
     </div>

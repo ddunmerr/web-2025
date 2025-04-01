@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Golos UI', sans-serif;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+
+}
+
+.container {
+    flex-direction: column;
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    background: #FFFFFF;
+    padding-right: 17px;
+
+}
+
+/*****************/
+.sidebar {
+    width: 72px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #FFFFFF;
+    border-right: 1px solid #2222220D
+}
+
+.icons-list {
+    position: relative;
+    padding: 16px;
+    margin-top: 40px;
+    list-style: none;
+
+}
+
+
+.icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.icon--home {
+    background-image: url(/icons/home.svg);
+}
+
+.icon--profile {
+    background-image: url(/icons/profile.svg);
+}
+
+.icon--add {
+    background-image: url(/icons/add.svg);
+}
+
+/* Шапка */
+.header {
+    width: calc(100% - 72px);
+    height: 73px;
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 73px;
+    z-index: 1;
+}
+
+/* Лента */
+.feed {
+    width: 474px;
+    margin: 73px auto 0;
+    padding: 20px;
+}
+
+.post {
+    width: 474px;
+    margin-bottom: 30px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.post-header {
+    flex-direction: row;
+    display: flex;
+    margin-top: 16px;
+    width: 474px;
+    height: 32px;
+    justify-content: space-between;
+}
+
+.post-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+    width: 132px;
+    height: 32px;
+}
+
+.user-avatar {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
+}
+
+.user-name {
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: -0.15px;
+    line-height: 18px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.post-text {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.post-time {
+    color: rgba(34, 34, 34, 0.5);
+    font-size: 14px;
+}
+
+.edit-button {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    background-image: url(/icons/edit.svg);
+    top: 4px;
+    border: none;
+}
+
+.post-image {
+    position: relative;
+    margin-top: 16px;
+    width: 474px;
+    height: 474px;
+    object-fit: cover;
+
+}
+
+.span-reaction {}
+
+.like-button {
+    margin-top: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 68px;
+    height: 30px;
+    background-size: 16px 18px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.like-img {
+    margin: 16px auto;
+}
+
+.user-avatar-ivan2004 {
+    background-image: url("/images/v412_71.png");
+
+}
+
+.user-avatar-lizadem {
+    background-image: url("/images/v412_83.png");
+
+}

@@ -1,19 +1,3 @@
-<?php
-if (!empty($_GET['q'])) {
-    $query = htmlspecialchars($_GET['q'], ENT_QUOTES, 'UTF-8');
-
-    switch ($query) {
-        case 'info':
-            phpinfo();
-            exit;
-        default:
-            header("HTTP/1.0 404 Not Found");
-            echo "Invalid query parameter.";
-            exit;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -21,40 +5,40 @@ if (!empty($_GET['q'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лента</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/feed.css">
 </head>
 
 <body>
     <div class="container">
+
         <!-- Сайдбар -->
         <div class="sidebar">
-            <div class="icons-list">
-                <ul>
-                    <li><a class="icon icon--home"></a></li>
-                    <li><a href="/pages/profile.php" class="icon icon--profile"></a></li>
-                    <li><a class="icon icon--add"></a></li>
-                </ul>
-            </div>
+            <ul class="icons-list">
+                <li><a class="icon icon--home"></a></li>
+                <li><a href="/pages/profile.php" class="icon icon--profile"></a></li>
+                <li><a class="icon icon--add"></a></li>
+            </ul>
         </div>
+
         <!-- Шапка -->
         <div class="header"></div>
-
         <!-- Лента -->
         <main class="feed">
             <!-- Пост 1 -->
             <div class="post">
                 <div class="post-header">
-                    <div class="user">
-                        <div class="user-avatar" id="ivan2004"></div>
+                    <div class="post-author">
+                        <img class="user-avatar user-avatar-ivan2004"></img>
                         <span class="user-name">Ваня Денисов</span>
                     </div>
-                    <div class="edit-button"></div>
+                    <button class="edit-button"></button>
                 </div>
                 <img class="post-image" src="/images/v412_61.png" alt="Пост пользователя">
                 <span class="span-reaction">
-                    <button class="like-button">
+                    <button class="like-button"> 204
+                        <img class="like-img" src="/icons/like.svg">
                     </button>
-                    204
+
                 </span>
                 <div class="post-content">
                     <p class="post-text">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...»</p>
@@ -65,18 +49,19 @@ if (!empty($_GET['q'])) {
             <!-- Пост 2 -->
             <div class="post">
                 <div class="post-header">
-                    <div class="user">
-                        <div class="user-avatar" id="lizadem"></div>
+                    <div class="post-author">
+                        <img class="user-avatar user-avatar-lizadem"></img>
                         <span class="user-name">Лиза Дёмина</span>
                     </div>
-                    <div class="edit-button"></div>
+                    <button class="edit-button"></button>
                 </div>
                 <img class="post-image" src="/images/v412_77.png" alt="Пост пользователя">
-                <span class="span-reaction">
-                    <button class="like-button">
-                    </button>
+
+                <button class="like-button">
                     204
-                </span>
+                </button>
+
+
                 <div class="post-content">
                     <span class="post-time">1 день назад</span>
                 </div>

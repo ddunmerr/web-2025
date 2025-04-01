@@ -1,19 +1,3 @@
-<?php
-if (!empty($_GET['q'])) {
-    $query = htmlspecialchars($_GET['q'], ENT_QUOTES, 'UTF-8');
-
-    switch ($query) {
-        case 'info':
-            phpinfo();
-            exit;
-        default:
-            header("HTTP/1.0 404 Not Found");
-            echo "Invalid query parameter.";
-            exit;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -21,7 +5,7 @@ if (!empty($_GET['q'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Войти</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>

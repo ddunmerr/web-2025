@@ -3,7 +3,6 @@
     box-sizing: border-box;
 }
 
-/* Общие стили */
 body {
     margin: 0 auto;
     font-family: 'Golos UI', sans-serif;
@@ -30,8 +29,6 @@ body {
     padding-right: 17px;
 
 }
-
-
 
 .background-image {
     position: absolute;
@@ -69,7 +66,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    z-index: 1;
 }
 
 .field {
@@ -218,7 +214,6 @@ body {
     justify-content: space-between;
 }
 
-
 .user {
     display: flex;
     flex-direction: row;
@@ -310,7 +305,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
 .profile-header {
     align-items: center;
     width: 100%;
@@ -393,7 +387,6 @@ body {
     margin-top: 42px;
     margin-left: 234px;
 }
-
 
 .wall img {
     width: 322px;
