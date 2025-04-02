@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Golos UI";
+    src: local("Golos UI"),
+        url("/fonts/Golos UI_Regular.ttf");
+    font-weight: normal;
+}
+
 * {
     padding: 0;
     box-sizing: border-box;
@@ -30,109 +37,6 @@ body {
 
 }
 
-.background-image {
-    position: absolute;
-    width: 462.08px;
-    height: 501px;
-    left: 269px;
-    top: 289px;
-    background: url("/images/main_image.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: 0;
-}
-
-/* Заголовок "Войти" */
-.page-title {
-    position: relative;
-    width: 385px;
-    height: 180px;
-    left: 179px;
-    top: 180px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 140px;
-    line-height: 0px;
-    letter-spacing: -1.5px;
-    color: #222222;
-}
-
-/* Форма входа */
-.login-form {
-    position: absolute;
-    width: 343px;
-    height: 251px;
-    left: 838px;
-    top: 415px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.field {
-    height: 88px;
-    width: 343px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.field label {
-    font-size: 15px;
-    line-height: 18px;
-    color: #222222;
-    font-weight: 400;
-    letter-spacing: -0.15px;
-}
-
-.field input {
-    padding: 13px 12px;
-    background: #F2F3F5;
-    border-radius: 10px;
-    border: none;
-    font-size: 15px;
-    line-height: 18px;
-    color: #222222;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.field input:focus {
-    outline-color: #3F8AE0;
-}
-
-.field input:invalid {
-    outline-color: #E64646;
-}
-
-.input-description {
-    font-size: 13px;
-    line-height: 16px;
-    height: 16px;
-    color: #808080;
-    margin: 5px 0 0 0;
-    letter-spacing: -0.08px;
-}
-
-/* Кнопка "Продолжить" */
-.continue-button {
-    padding: 16px 16px;
-    width: 343px;
-    height: 48px;
-    background: #222222;
-    border-radius: 10px;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.continue-button:hover {
-    background: #444444;
-}
-
 /*****************/
 .sidebar {
     width: 72px;
@@ -148,14 +52,10 @@ body {
     position: relative;
     padding: 16px;
     margin-top: 40px;
+    list-style: none;
 
 }
 
-.icons-list ul {
-
-    list-style-type: none;
-
-}
 
 .icon {
     display: block;
@@ -187,132 +87,16 @@ body {
     position: fixed;
     top: 0;
     left: 73px;
-    z-index: 100;
+    z-index: 1;
 }
 
-/* Лента */
-.feed {
-    width: 474px;
-    margin: 73px auto 0;
-    padding: 20px;
-}
 
-.post {
-    width: 474px;
-    margin-bottom: 30px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.post-header {
-    flex-direction: row;
-    display: flex;
-    margin-top: 16px;
-    width: 474px;
-    height: 32px;
-    justify-content: space-between;
-}
-
-.user {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    gap: 10px;
-    width: 132px;
-    height: 32px;
-}
-
-.user-avatar {
-    position: relative;
-    height: 32px;
-    width: 32px;
-    background-position: center;
-    background-size: cover;
-    border-radius: 6px;
-}
-
-.user-name {
-    font-style: normal;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-    font-size: 14px;
-    letter-spacing: -0.15px;
-    line-height: 18px;
-    font-weight: 500;
-    vertical-align: middle;
-}
-
-.post-text {
-    margin-bottom: 8px;
-    font-size: 15px;
-    line-height: 18px;
-    letter-spacing: -0.15px;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.post-time {
-    color: rgba(34, 34, 34, 0.5);
-    font-size: 14px;
-}
-
-.edit-button {
-    position: relative;
-    height: 24px;
-    width: 24px;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    background-image: url(/icons/edit.svg);
-    top: 4px;
-}
-
-.post-image {
-    position: relative;
-    margin-top: 16px;
-    width: 474px;
-    height: 474px;
-    object-fit: cover;
-
-}
-
-.span-reaction {
-    font-size: 15px;
-    display: flex;
-    flex-direction: row;
-    width: 68px;
-    height: 30px;
-    margin-top: 16px;
-    padding: 6px 12px;
-    gap: 3px;
-    border-radius: 8px;
-    background-color: rgba(34, 34, 34, 0.05);
-}
-
-.like-button {
-
-    border: none;
-    cursor: pointer;
-    width: 16px;
-    height: 18px;
-    background-image: url(/icons/like.svg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 
 .profile-header {
     align-items: center;
-    width: 100%;
-    height: 263px;
     display: flex;
     flex-direction: column;
     margin-top: 97px;
-    justify-content: center;
 }
 
 .profile-avatar {
@@ -324,13 +108,7 @@ body {
 }
 
 .profile-name {
-    width: 361px;
-    height: 32px;
-    vertical-align: middle;
-}
-
-.profile-name h1 {
-    font-weight: 500;
+    font-weight: 500px;
     font-size: 32px;
     line-height: 32px;
     letter-spacing: -0.25px;
@@ -339,15 +117,11 @@ body {
 
 }
 
+
+
 .profile-description {
     width: 361px;
-    height: 36px;
     margin-top: 10px;
-    margin-bottom: 12px;
-
-}
-
-.profile-description p {
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
@@ -366,10 +140,11 @@ body {
     margin-top: 12px;
     border-radius: 6px;
     gap: 6px;
-    background-color: rgba(242, 243, 245, 1)
+    background-color: rgba(242, 243, 245, 1);
+
 }
 
-.posts-count p {
+.count-p {
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
@@ -378,30 +153,14 @@ body {
 }
 
 .wall {
-    display: flex;
-    flex-wrap: wrap;
-    width: 972px;
-
-    gap: 2.48px;
-
     margin-top: 42px;
     margin-left: 234px;
 }
 
-.wall img {
+.wall-img {
     width: 322px;
     height: 322px;
     border-radius: 2px;
     object-fit: cover;
-
-}
-
-#ivan2004 {
-    background-image: url("/images/v412_71.png");
-
-}
-
-#lizadem {
-    background-image: url("/images/v412_83.png");
 
 }

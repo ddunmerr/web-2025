@@ -28,36 +28,35 @@
             <div class="post">
                 <div class="post-header">
                     <div class="post-author">
-                        <img class="user-avatar user-avatar-ivan2004"></img>
+                        <img class="user-avatar" src="/images/v412_71.png">
                         <span class="user-name">Ваня Денисов</span>
                     </div>
                     <button class="edit-button"></button>
                 </div>
                 <img class="post-image" src="/images/v412_61.png" alt="Пост пользователя">
-                <span class="span-reaction">
-                    <button class="like-button"> 204
-                        <img class="like-img" src="/icons/like.svg">
-                    </button>
-
-                </span>
-                <div class="post-content">
-                    <p class="post-text">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...»</p>
-                    <span class="post-time">2 часа назад</span>
-                </div>
+                <!-- Кнопка лайк-->
+                <button class="like-button">
+                    <img class="like-img" src="/icons/like.svg">
+                    204
+                </button>
+                <p class="post-text">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...»</p>
+                <p class="post-time">2 часа назад</p>
             </div>
 
             <!-- Пост 2 -->
             <div class="post">
                 <div class="post-header">
                     <div class="post-author">
-                        <img class="user-avatar user-avatar-lizadem"></img>
+                        <img class="user-avatar" src="/images/v412_83.png">
                         <span class="user-name">Лиза Дёмина</span>
                     </div>
                     <button class="edit-button"></button>
                 </div>
                 <img class="post-image" src="/images/v412_77.png" alt="Пост пользователя">
 
+                <!-- Кнопка лайк-->
                 <button class="like-button">
+                    <img class="like-img" src="/icons/like.svg">
                     204
                 </button>
 
