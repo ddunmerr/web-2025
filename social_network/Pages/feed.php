@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="page">
 
         <!-- Сайдбар -->
         <div class="sidebar">
@@ -27,17 +27,17 @@
             <!-- Пост 1 -->
             <div class="post">
                 <div class="post-header">
-                    <div class="post-author">
+                    <span class="post-author">
                         <img class="user-avatar" src="/images/v412_71.png">
                         <span class="user-name">Ваня Денисов</span>
-                    </div>
+                    </span>
                     <button class="edit-button"></button>
                 </div>
                 <img class="post-image" src="/images/v412_61.png" alt="Пост пользователя">
                 <!-- Кнопка лайк-->
                 <button class="like-button">
                     <img class="like-img" src="/icons/like.svg">
-                    204
+                    <span class="like-counter">2040044440</span>
                 </button>
                 <p class="post-text">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...»</p>
                 <p class="post-time">2 часа назад</p>
@@ -57,7 +57,7 @@
                 <!-- Кнопка лайк-->
                 <button class="like-button">
                     <img class="like-img" src="/icons/like.svg">
-                    204
+                    <span class="like-counter">2040044440</span>
                 </button>
 
 

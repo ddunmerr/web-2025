@@ -6,40 +6,28 @@
 }
 
 * {
+    font-family: 'Golos UI', sans-serif;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    max-width: 110%;
     margin: 0 auto;
-    font-family: 'Golos UI', sans-serif;
     background: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     overflow-y: auto;
-
 }
 
-.container {
-    flex-direction: column;
+.page {
     max-width: 1440px;
-    width: 100%;
-    height: 100%;
     min-height: 100vh;
     box-sizing: border-box;
     margin: 0 auto;
-    display: flex;
     position: relative;
     background: #FFFFFF;
-    padding-right: 17px;
-
 }
 
 .sidebar {
-    width: 72px;
-    height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
@@ -48,7 +36,6 @@ body {
 }
 
 .icons-list {
-    position: relative;
     padding: 16px;
     margin-top: 40px;
     list-style: none;
@@ -90,59 +77,56 @@ body {
 
 /* Лента */
 .feed {
-    width: 474px;
-    margin: 73px auto 0;
-    padding: 20px;
+    box-sizing: content-box;
+    display: block;
+    min-width: 474px;
+    margin: 73px 484px 0 482px;
 }
 
 .post {
-    width: 474px;
     margin-bottom: 30px;
     background: #FFFFFF;
 }
 
 .post-header {
+    position: relative;
     flex-direction: row;
     display: flex;
-    margin-top: 16px;
-    width: 474px;
+    margin: 16px 0 0;
+    width: 100%;
     height: 32px;
     justify-content: space-between;
+    white-space: nowrap;
 }
 
 .post-author {
+    margin: 0 auto 0 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0;
-    gap: 10px;
-    width: 132px;
-    height: 32px;
 }
 
 .user-avatar {
-    position: relative;
     height: 32px;
     width: 32px;
-    background-position: center;
-    background-size: cover;
+    display: block;
     border-radius: 6px;
+    object-fit: cover;
 }
 
 .user-name {
+    margin-left: 10px;
     font-style: normal;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
+    display: inline;
     font-size: 14px;
     letter-spacing: -0.15px;
-    line-height: 18px;
+    line-height: 7px;
     font-weight: 500;
     vertical-align: middle;
 }
 
 .post-text {
+    width: 100%;
     margin-top: 16px;
     margin-bottom: 0px;
     font-size: 15px;
@@ -150,6 +134,8 @@ body {
     letter-spacing: -0.15px;
     font-weight: 400;
     font-style: normal;
+    white-space: 100%;
+    text-align: justify;
 }
 
 .post-time {
@@ -184,21 +170,24 @@ body {
 }
 
 .like-button {
-    font-size: 15px;
-    display: flex;
-    align-items: center;
+    text-wrap: nowrap;
     margin-top: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    width: 68px;
-    height: 30px;
     background-color: #f0f0f0;
+    padding: 6px 12px;
+}
+
+.like-counter {
+    font-size: 15px;
+    vertical-align: middle;
+    width: fit-content;
 }
 
 .like-img {
     width: 16px;
     height: 18px;
-    margin-left: 12px;
-    margin-right: 3px;
+    vertical-align: middle;
+
 }

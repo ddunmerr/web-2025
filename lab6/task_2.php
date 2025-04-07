@@ -25,15 +25,8 @@ function digit_to_word(int $digit)
     }
 }
 // Обработка формы
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['digit'])) {
-        $digit = (int)$_POST['digit'];
-    }
-    $result = digit_to_word($digit);
-    // Проверка на високосный год
-
-}
-
+$digit = (int)$_POST['digit'];
+$result = digit_to_word($digit);
 ?>
 
 <!DOCTYPE html>

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="page">
         <!-- Сайдбар -->
         <div class="sidebar">
             <ul class="icons-list">
@@ -36,7 +36,7 @@
                     <path d="M6.16614 6.66797C6.71842 6.66797 7.16614 6.22025 7.16614 5.66797C7.16614 5.11568 6.71842 4.66797 6.16614 4.66797C5.61385 4.66797 5.16614 5.11568 5.16614 5.66797C5.16614 6.22025 5.61385 6.66797 6.16614 6.66797Z" fill="#222222" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M14.5008 10.0013L11.1674 6.66797L3.83411 14.0013" stroke="#222222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <p class="count-p">43 поста</p>
+                <span class="count-p">43 поста</span>
             </div>
         </div>
         <!-- Стена профиля -->

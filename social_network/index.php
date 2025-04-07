@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="page">
         <!-- Изображение на заднем плане -->
         <div class="background-image"></div>
 

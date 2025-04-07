@@ -1,16 +1,14 @@
 <?php
 // Обработка формы
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['year'])) {
-        $year = (int)$_POST['year'];
-    }
+if (isset($_POST['year'])) {
+    $year = (int)$_POST['year'];
+}
 
-    // Проверка на високосный год
-    if ($year % 400 === 0 || ($year % 100 !== 0 && $year % 4 === 0)) {
-        $result = "YES";
-    } else {
-        $result = "NO";
-    }
+// Проверка на високосный год
+if ($year % 400 === 0 || ($year % 100 !== 0 && $year % 4 === 0)) {
+    $result = "YES";
+} else {
+    $result = "NO";
 }
 ?>
 
@@ -21,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проверка високосного года</title>
-
 </head>
 
 <body>
