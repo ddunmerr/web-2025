@@ -3,30 +3,34 @@ function digit_to_word(int $digit)
 {
     switch ($digit) {
         case 0:
-            return "Ноль";
+            return 'Ноль';
         case 1:
-            return "Один";
+            return 'Один';
         case 2:
-            return "Два";
+            return 'Два';
         case 3:
-            return "Три";
+            return 'Три';
         case 4:
-            return "Четыре";
+            return 'Четыре';
         case 5:
-            return "Пять";
+            return 'Пять';
         case 6:
-            return "Шесть";
+            return 'Шесть';
         case 7:
-            return "Семь";
+            return 'Семь';
         case 8:
-            return "Восемь";
+            return 'Восемь';
         case 9:
-            return "Девять";
+            return 'Девять';
+        default:
+            return 'Ты чо наделал';
     }
 }
 // Обработка формы
-$digit = (int)$_POST['digit'];
-$result = digit_to_word($digit);
+if (isset($_POST['digit'])) {
+    $digit = (int)$_POST['digit'];
+    $result = digit_to_word($digit);
+}
 ?>
 
 <!DOCTYPE html>

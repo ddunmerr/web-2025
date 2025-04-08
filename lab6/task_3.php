@@ -1,23 +1,31 @@
 <?php
-
-
-
-function zodiak(int $date)
+function get_zodiac_sign($day, $month): ?string
 {
-    $day = $date['mday'];
-    $month = $date['mon'];
-    return $month;
+    if (($month == 1  && $day >= 20) || ($month == 2  && $day <= 18)) return 'Водолей';
+    if (($month == 2  && $day >= 19) || ($month == 3  && $day <= 20)) return 'Рыбы';
+    if (($month == 3  && $day >= 21) || ($month == 4  && $day <= 19)) return 'Овен';
+    if (($month == 4  && $day >= 20) || ($month == 5  && $day <= 20)) return 'Телец';
+    if (($month == 5  && $day >= 21) || ($month == 6  && $day <= 20)) return 'Близнецы';
+    if (($month == 6  && $day >= 21) || ($month == 7  && $day <= 22)) return 'Рак';
+    if (($month == 7  && $day >= 23) || ($month == 8  && $day <= 22)) return 'Лев';
+    if (($month == 8  && $day >= 23) || ($month == 9  && $day <= 22)) return 'Дева';
+    if (($month == 9  && $day >= 23) || ($month == 10 && $day <= 22)) return 'Весы';
+    if (($month == 10 && $day >= 23) || ($month == 11 && $day <= 21)) return 'Скорпион';
+    if (($month == 11 && $day >= 22) || ($month == 12 && $day <= 21)) return 'Стрелец';
+    return 'Козерог';
 }
-// Обработка формы
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['digit'])) {
-        $date = (int)$_POST['digit'];
+
+if (isset($_POST["date"])) {
+    $date = $_POST["date"];
+    $timestamp = strtotime($date);
+    if ($timestamp !== false) {
+        $day = (int)date("d", $timestamp);
+        $month = (int)date("m", $timestamp);
+        $result = get_zodiac_sign($day, $month);
+    } else {
+        $result = 'Неверный формат даты.';
     }
-    $result = zodiak($date);
-    // Проверка на високосный год
-
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -26,16 +34,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Циферки</title>
+    <title>Гадалок.net</title>
 
 </head>
 
 <body>
-    <h1>Циферки</h1>
+    <h1>Узнай свой знак зодиака</h1>
     <form method="post">
-        <p>Введите цифру:</p>
+        <p>Введите дату:</p>
         <input type="date" name="date" required>
-        <button type="submit">Проверить</button>
+        <button type="submit">Узнать знак</button>
     </form>
 
     <?php if (isset($result)) {
