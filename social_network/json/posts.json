@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "user_id": 1,
+        "text": "Это пост с изображением 1",
+        "image": "/images/1.png",
+        "likes": 120,
+        "timestamp": 1713145200
+    },
+    {
+        "id": 2,
+        "user_id": 1,
+        "text": "Это пост с изображением 2",
+        "image": "/images/2.png",
+        "likes": 240,
+        "timestamp": 1713145300
+    },
+    {
+        "id": 3,
+        "user_id": 1,
+        "text": "Это пост с изображением 3",
+        "image": "/images/3.png",
+        "likes": 360,
+        "timestamp": 1713145400
+    },
+    {
+        "id": 4,
+        "user_id": 1,
+        "text": "Это пост с изображением 4",
+        "image": "/images/4.png",
+        "likes": 480,
+        "timestamp": 1713145500
+    },
+    {
+        "id": 5,
+        "user_id": 1,
+        "text": "Это пост с изображением 5",
+        "image": "/images/5.png",
+        "likes": 600,
+        "timestamp": 1713145600
+    },
+    {
+        "id": 6,
+        "user_id": 1,
+        "text": "Это пост с изображением 6",
+        "image": "/images/6.png",
+        "likes": 720,
+        "timestamp": 1713145700
+    },
+    {
+        "id": 1,
+        "user_id": 1,
+        "text": "Так красиво сегодня на улице! Настоящая зима))",
+        "image": "/images/v412_61.png",
+        "likes": 2040044440,
+        "timestamp": 1713145200
+    },
+    {
+        "id": 2,
+        "user_id": 2,
+        "text": "",
+        "image": "/images/v412_77.png",
+        "likes": 2040044440,
+        "timestamp": 1713145400
+    }
+]

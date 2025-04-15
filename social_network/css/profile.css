@@ -146,6 +146,10 @@ body {
 }
 
 .wall-img {
+    max-width: 323px;
+    max-height: 323px;
+    width: 100%;
+    height: auto;
     border-radius: 2px;
     object-fit: cover;
 }

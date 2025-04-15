@@ -1,3 +1,18 @@
+<?php
+$users = json_decode(file_get_contents(__DIR__ . '/../json/users.json'), true);
+$posts = json_decode(file_get_contents(__DIR__ . '/../json/posts.json'), true);
+
+// функция поиска пользователя по id
+function getUserById($users, $id)
+{
+    foreach ($users as $user) {
+        if ($user['id'] == $id) return $user;
+    }
+    return null;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -24,51 +39,12 @@
         <div class="header"></div>
         <!-- Лента -->
         <main class="feed">
-            <!-- Пост 1 -->
-            <div class="post">
-                <div class="post-header">
-                    <span class="post-author">
-                        <img class="user-avatar" src="/images/v412_71.png">
-                        <span class="user-name">Ваня Денисов</span>
-                    </span>
-                    <button class="edit-button"></button>
-                </div>
-                <img class="post-image" src="/images/v412_61.png" alt="Пост пользователя">
-                <!-- Кнопка лайк-->
-                <button class="like-button">
-                    <img class="like-img" src="/icons/like.svg">
-                    <span class="like-counter">2040044440</span>
-                </button>
-                <p class="post-text">Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...»</p>
-                <p class="post-time">2 часа назад</p>
-            </div>
-
-            <!-- Пост 2 -->
-            <div class="post">
-                <div class="post-header">
-                    <div class="post-author">
-                        <img class="user-avatar" src="/images/v412_83.png">
-                        <span class="user-name">Лиза Дёмина</span>
-                    </div>
-                    <button class="edit-button"></button>
-                </div>
-                <img class="post-image" src="/images/v412_77.png" alt="Пост пользователя">
-
-                <!-- Кнопка лайк-->
-                <button class="like-button">
-                    <img class="like-img" src="/icons/like.svg">
-                    <span class="like-counter">2040044440</span>
-                </button>
-
-
-                <div class="post-content">
-                    <span class="post-time">1 день назад</span>
-                </div>
-            </div>
+            <?php foreach ($posts as $post): ?>
+                <?php include(__DIR__ . '/../templates/post.php'); ?>
+            <?php endforeach; ?>
         </main>
 
     </div>
-
 </body>
 
 </html>

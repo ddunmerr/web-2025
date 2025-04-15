@@ -115,6 +115,8 @@ body {
 }
 
 .user-name {
+    color: black;
+    text-decoration: none;
     margin-left: 10px;
     font-style: normal;
     display: inline;
@@ -161,12 +163,11 @@ body {
 }
 
 .post-image {
-    position: relative;
     margin-top: 16px;
-    width: 474px;
-    height: 474px;
-    object-fit: cover;
-
+    width: 100%;
+    height: auto;
+    max-width: 474px;
+    object-fit: contain;
 }
 
 .like-button {
