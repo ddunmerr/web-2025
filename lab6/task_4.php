@@ -17,14 +17,15 @@ function getZodiacSign($day, $month): ?string
 
 if (isset($_POST['date'])) {
     $date = $_POST['date'];
-    $date = strtotime($date);
-    if ($date !== false) {
-        $day = (int)date("d", $date);
-        $month = (int)date("m", $date);
+
+        $date = explode('.', $date);
+        $day = $date[0];
+        $month = $date[1];
         $result = getZodiacSign($day, $month);
-    } else {
-        $result = 'Неверный формат даты.';
-    }
+
+        $result = 'Неверный формат'
+
+
 }
 ?>
 
@@ -42,7 +43,7 @@ if (isset($_POST['date'])) {
     <h1>Узнай свой знак зодиака</h1>
     <form method="post">
         <p>Введите дату:</p>
-        <input type="date" name="date" required>
+        <input name="date" required>
         <button type="submit">Узнать знак</button>
     </form>
 

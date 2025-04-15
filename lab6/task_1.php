@@ -1,14 +1,15 @@
 <?php
-// Обработка формы
 if (isset($_POST['year'])) {
     $year = (int)$_POST['year'];
-}
-
-// Проверка на високосный год
-if ($year % 400 === 0 || ($year % 100 !== 0 && $year % 4 === 0)) {
-    $result = "YES";
-} else {
-    $result = "NO";
+    if ($year > 3000 || $year < 1) {
+        $result = "Некорректное значение";
+    } elseif ($year != null) {
+        if ($year % 400 === 0 || ($year % 100 !== 0 && $year % 4 === 0)) {
+            $result = 'YES';
+        } else {
+            $result = 'NO';
+        }
+    }
 }
 ?>
 

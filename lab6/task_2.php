@@ -1,5 +1,5 @@
 <?php
-function digit_to_word(int $digit)
+function digitToWord(int $digit)
 {
     switch ($digit) {
         case 0:
@@ -23,13 +23,13 @@ function digit_to_word(int $digit)
         case 9:
             return 'Девять';
         default:
-            return 'Ты чо наделал';
+            return 'Не делай так больше';
     }
 }
 // Обработка формы
 if (isset($_POST['digit'])) {
     $digit = (int)$_POST['digit'];
-    $result = digit_to_word($digit);
+    $result = digitToWord($digit);
 }
 ?>
 
