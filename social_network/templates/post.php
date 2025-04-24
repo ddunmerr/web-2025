@@ -6,15 +6,15 @@ if (!$user) return;
 <div class="post">
     <div class="post-header">
         <span class="post-author">
-            <img class="user-avatar" src="<?= htmlspecialchars($user['avatar']) ?>">
-            <a class="user-name" href="/Pages/profile.php?id=<?php echo htmlspecialchars($user['id']) ?>"><?= htmlspecialchars($user['name']) ?></a>
+            <img class="user-avatar" src="<?= $user['avatar'] ?>">
+            <a class="user-name" href="/Pages/profile.php?id=<?php echo $user['id'] ?>"><?= $user['name'] ?></a>
         </span>
         <button class="edit-button"></button>
     </div>
-    <img class="post-image" src="<?= htmlspecialchars($post['image']) ?>" alt="Пост пользователя">
+    <img class="post-image" src="<?= $post['image'] ?>" alt="Пост пользователя">
     <button class="like-button">
         <img class="like-img" src="/icons/like.svg">
-        <span class="like-counter"><?= htmlspecialchars($post['likes']) ?></span>
+        <span class="like-counter"><?= $post['likes'] ?></span>
     </button>
     <?php if (!empty($post['text'])): ?>
         <p class="post-text"><?= htmlspecialchars($post['text']) ?></p>

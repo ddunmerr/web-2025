@@ -26,7 +26,7 @@ function digitToWord(int $digit)
             return 'Не делай так больше';
     }
 }
-// Обработка формы
+
 if (isset($_POST['digit'])) {
     $digit = (int)$_POST['digit'];
     $result = digitToWord($digit);
@@ -34,7 +34,6 @@ if (isset($_POST['digit'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="ru">
 
 <head>
     <meta charset="UTF-8">

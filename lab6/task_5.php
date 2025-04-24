@@ -1,5 +1,22 @@
 <?php
+function bambam($start, $end)
+{
+    for ($i = 1; $i < 3; $i++) {
+        $firstSumm += $start[$i];
 
+        $secondSumm += $start[6 - $i];
+    }
+    if ($firstSumm == $secondSumm) {
+        return $start;
+    }
+}
+
+if (isset($_POST['start']) && isset($_POST['end'])) {
+    $start = $_POST['start'];
+    $end = $_POST['end'];
+    $start = str_split($start, 1);
+    $end = str_split($end, 1);
+}
 ?>
 
 <!DOCTYPE html>

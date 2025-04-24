@@ -2,7 +2,6 @@
 $users = json_decode(file_get_contents(__DIR__ . '/../json/users.json'), true);
 $posts = json_decode(file_get_contents(__DIR__ . '/../json/posts.json'), true);
 
-// функция поиска пользователя по id
 function getUserById($users, $id)
 {
     foreach ($users as $user) {
@@ -39,9 +38,10 @@ function getUserById($users, $id)
         <div class="header"></div>
         <!-- Лента -->
         <main class="feed">
-            <?php foreach ($posts as $post): ?>
-                <?php include(__DIR__ . '/../templates/post.php'); ?>
-            <?php endforeach; ?>
+            <?php
+            foreach ($posts as $post)
+                include(__DIR__ . '/../templates/post.php');
+            ?>
         </main>
 
     </div>

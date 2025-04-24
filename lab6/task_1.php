@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['year'])) {
     $year = (int)$_POST['year'];
-    if ($year > 3000 || $year < 1) {
+    if ($year > 30000 || $year < 1) {
         $result = "Некорректное значение";
     } elseif ($year != null) {
         if ($year % 400 === 0 || ($year % 100 !== 0 && $year % 4 === 0)) {
@@ -14,7 +14,6 @@ if (isset($_POST['year'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="ru">
 
 <head>
     <meta charset="UTF-8">

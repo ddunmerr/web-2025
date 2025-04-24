@@ -49,7 +49,7 @@ $userPosts = array_filter($posts, fn($post) => $post['user_id'] == $userId);
 
         <!-- Шапка профиля -->
         <div class="profile-header">
-            <img src="<?= htmlspecialchars($user['avatar']) ?>" alt="Аватар" class="profile-avatar">
+            <img src="<?= $user['avatar'] ?>" alt="Аватар" class="profile-avatar">
             <h1 class="profile-name"><?= htmlspecialchars($user['name']) ?></h1>
             <p class="profile-description"><?= htmlspecialchars($user['description']) ?></p>
 
@@ -66,7 +66,7 @@ $userPosts = array_filter($posts, fn($post) => $post['user_id'] == $userId);
         <!-- Стена профиля -->
         <div class="wall">
             <?php foreach ($userPosts as $post): ?>
-                <img class="wall-img" src="<?= htmlspecialchars($post['image']) ?>" alt="/images/image.png">
+                <img class="wall-img" src="<?= $post['image'] ?>" alt="/images/image.png">
             <?php endforeach; ?>
         </div>
     </div>
