@@ -9,7 +9,6 @@ function factorial($number)
 
 if (isset($_POST['number'])) {
     $number = $_POST['number'];
-
     $result = factorial($number);
 }
 ?>
@@ -20,16 +19,16 @@ if (isset($_POST['number'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гадалок.net</title>
+    <title>Факториал</title>
 
 </head>
 
 <body>
-    <h1>Узнай свой знак зодиака</h1>
+    <h1>Факториал</h1>
     <form method="post">
-        <p>Введите дату:</p>
+        <p>Введите число:</p>
         <input name="number" type="number" required>
-        <button type="submit">Узнать знак</button>
+        <button type="submit">Вычислить</button>
     </form>
 
     <?php if (isset($result)) {

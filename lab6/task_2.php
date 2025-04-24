@@ -1,8 +1,9 @@
 <?php
 function digitToWord(int $digit)
 {
+
     switch ($digit) {
-        case 0:
+        case ($digit === 0):
             return 'Ноль';
         case 1:
             return 'Один';
@@ -23,7 +24,7 @@ function digitToWord(int $digit)
         case 9:
             return 'Девять';
         default:
-            return 'Не делай так больше';
+            return 'Некорректное значение';
     }
 }
 
@@ -34,6 +35,7 @@ if (isset($_POST['digit'])) {
 ?>
 
 <!DOCTYPE html>
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
