@@ -6,9 +6,6 @@ function connectDatabase(): PDO
     $user = 'root';
     return new PDO($dsn, $user);
 }
-
-
-
 function findPostInDatabase(PDO $connection, int $id): ?array
 {
     $query = <<<SQL
@@ -28,18 +25,16 @@ function getAllPosts(PDO $connection): array
             p.id, p.id_user, p.descr, p.likes, p.publish_date, c.image_1
         FROM post AS p
         JOIN carousel AS c ON p.id_carousel = c.id
+        ORDER BY p.publish_date DESC
     SQL;
     $statement = $connection->query($query);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-
-
-
 function findUserInDatabase(PDO $connection, int $id): ?array
 {
     $query = <<<SQL
         SELECT 
-            id, first_name, second_name, avatar 
+            id, first_name, second_name, avatar, descr 
         FROM user 
         WHERE id = $id
     SQL;
@@ -47,9 +42,15 @@ function findUserInDatabase(PDO $connection, int $id): ?array
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     return $row ?: null;
 }
-
-$postId = (int)$_GET['post_id'];
-if (!$postId) {
-    return 0;
+function getUserPosts(PDO $connection, int $userId): array
+{
+    $query = <<<SQL
+        SELECT 
+            p.id, p.descr, p.likes, p.publish_date, c.image_1
+        FROM post AS p
+        JOIN carousel AS c ON p.id_carousel = c.id
+        WHERE p.id_user = $userId
+    SQL;
+    $statement = $connection->query($query);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
-require __DIR__ . '/../templates/post.php';

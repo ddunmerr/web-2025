@@ -1,32 +1,7 @@
 <?php
-require_once __DIR__ . '/../source/databaseConnection.php';
+require_once(__DIR__ . '/../source/databaseConnection.php');
 
 $connection = connectDatabase();
-
-function getUserById(PDO $connection, int $id): ?array
-{
-    $query = <<<SQL
-        SELECT 
-            id, first_name, second_name, avatar, descr
-        FROM user 
-        WHERE id = $id
-    SQL;
-    $statement = $connection->query($query);
-    return $statement->fetch(PDO::FETCH_ASSOC) ?: null;
-}
-
-function getUserPosts(PDO $connection, int $userId): array
-{
-    $query = <<<SQL
-        SELECT 
-            p.id, p.descr, p.likes, p.publish_date, c.image_1
-        FROM post AS p
-        JOIN carousel AS c ON p.id_carousel = c.id
-        WHERE p.id_user = $userId
-    SQL;
-    $statement = $connection->query($query);
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-}
 
 if (isset($_GET['id'])) {
     $userId = (int)$_GET['id'];
@@ -35,7 +10,7 @@ if (isset($_GET['id'])) {
     exit;
 }
 
-$user = getUserById($connection, $userId);
+$user = findUserInDatabase($connection, $userId);
 if (!$user) {
     header('Location: /pages/feed.php');
     exit;

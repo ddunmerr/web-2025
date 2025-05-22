@@ -1,5 +1,5 @@
 <?php
-$user = getUserById($connection, $post['id_user']);
+$user = findUserInDatabase($connection, $post['id_user']);
 if (!$user) return;
 ?>
 
@@ -14,10 +14,12 @@ if (!$user) return;
         <button class="edit-button"></button>
     </div>
     <img class="post-image" src="<?= $post['image_1'] ?>" alt="Пост пользователя">
-    <button class="like-button">
-        <img class="like-img" src="/icons/like.svg">
-        <span class="like-counter"><?= $post['likes'] ?></span>
-    </button>
+    <div class=".post-header">
+        <button class="like-button">
+            <img class="like-img" src="/icons/like.svg">
+            <span class="like-counter"><?= $post['likes'] ?></span>
+        </button>
+    </div>
     <?php if (!empty($post['descr'])): ?>
         <p class="post-text"><?= $post['descr'] ?></p>
     <?php endif; ?>

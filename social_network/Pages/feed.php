@@ -4,10 +4,6 @@ require_once(__DIR__ . '/../source/databaseConnection.php');
 $connection = connectDatabase();
 $posts = getAllPosts($connection);
 
-function getUserById(PDO $connection, int $id): ?array
-{
-    return findUserInDatabase($connection, $id);
-}
 ?>
 
 
@@ -16,7 +12,7 @@ function getUserById(PDO $connection, int $id): ?array
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
     <title>Лента</title>
     <link rel="stylesheet" href="/css/feed.css">
 </head>
@@ -29,7 +25,7 @@ function getUserById(PDO $connection, int $id): ?array
             <ul class="icons-list">
                 <li><a class="icon icon--home"></a></li>
                 <li><a href="/pages/profile.php" class="icon icon--profile"></a></li>
-                <li><a class="icon icon--add"></a></li>
+                <li><a href="/pages/addPost.php" class="icon icon--add"></a></li>
             </ul>
         </div>
 
