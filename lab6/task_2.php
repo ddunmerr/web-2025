@@ -1,9 +1,8 @@
 <?php
 function digitToWord(int $digit)
 {
-
     switch ($digit) {
-        case ($digit === 0):
+        case 0:
             return 'Ноль';
         case 1:
             return 'Один';

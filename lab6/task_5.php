@@ -1,10 +1,10 @@
 <?php
 function isLucky($ticket)
 {
-    if (strlen($ticket) != 6 || !ctype_digit($ticket)) {
+    if (!ctype_digit($ticket)) {
         return false;
     }
-
+    $ticket = str_pad($ticket, 6, '0', STR_PAD_LEFT);
     $digits = str_split($ticket);
     $firstSum = $digits[0] + $digits[1] + $digits[2];
     $secondSum = $digits[3] + $digits[4] + $digits[5];
@@ -59,7 +59,7 @@ if (isset($_POST['start']) && isset($_POST['end'])) {
     } elseif (isset($luckyTickets)) {
         echo "<h2>Счастливые билеты:</h2><ul>";
         foreach ($luckyTickets as $ticket) {
-            echo "<li>$ticket</li>";
+            echo "<li>" . str_pad($ticket, 6, '0', STR_PAD_LEFT) . "</li>";
         }
         echo "</ul>";
     }

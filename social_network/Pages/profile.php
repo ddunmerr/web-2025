@@ -1,26 +1,47 @@
 <?php
-$users = json_decode(file_get_contents(__DIR__ . '/../json/users.json'), true);
-$posts = json_decode(file_get_contents(__DIR__ . '/../json/posts.json'), true);
+require_once __DIR__ . '/../source/databaseConnection.php';
 
-function getUserById($users, $id)
+$connection = connectDatabase();
+
+function getUserById(PDO $connection, int $id): ?array
 {
-    foreach ($users as $user) {
-        if ($user['id'] == $id) return $user;
-    }
-    return null;
+    $query = <<<SQL
+        SELECT 
+            id, first_name, second_name, avatar, descr
+        FROM user 
+        WHERE id = $id
+    SQL;
+    $statement = $connection->query($query);
+    return $statement->fetch(PDO::FETCH_ASSOC) ?: null;
+}
+
+function getUserPosts(PDO $connection, int $userId): array
+{
+    $query = <<<SQL
+        SELECT 
+            p.id, p.descr, p.likes, p.publish_date, c.image_1
+        FROM post AS p
+        JOIN carousel AS c ON p.id_carousel = c.id
+        WHERE p.id_user = $userId
+    SQL;
+    $statement = $connection->query($query);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
 if (isset($_GET['id'])) {
     $userId = (int)$_GET['id'];
 } else {
-    header('Location: /Pages/feed.php');
+    header('Location: /pages/feed.php');
+    exit;
 }
 
-$user = getUserById($users, $userId);
-if (!$user) header('Location: /Pages/feed.php');
+$user = getUserById($connection, $userId);
+if (!$user) {
+    header('Location: /pages/feed.php');
+    exit;
+}
 
-
-$userPosts = array_filter($posts, fn($post) => $post['user_id'] == $userId);
+$userPosts = getUserPosts($connection, $userId);
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +71,8 @@ $userPosts = array_filter($posts, fn($post) => $post['user_id'] == $userId);
         <!-- Шапка профиля -->
         <div class="profile-header">
             <img src="<?= $user['avatar'] ?>" alt="Аватар" class="profile-avatar">
-            <h1 class="profile-name"><?= htmlspecialchars($user['name']) ?></h1>
-            <p class="profile-description"><?= htmlspecialchars($user['description']) ?></p>
+            <h1 class="profile-name"><?= $user['first_name'] . ' ' . $user['second_name'] ?></h1>
+            <p class="profile-description"><?= $user['descr'] ?></p>
 
             <div class="posts-count">
                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +87,7 @@ $userPosts = array_filter($posts, fn($post) => $post['user_id'] == $userId);
         <!-- Стена профиля -->
         <div class="wall">
             <?php foreach ($userPosts as $post): ?>
-                <img class="wall-img" src="<?= $post['image'] ?>" alt="/images/image.png">
+                <img class="wall-img" src="<?= $post['image_1'] ?>" alt="/images/image.png">
             <?php endforeach; ?>
         </div>
     </div>

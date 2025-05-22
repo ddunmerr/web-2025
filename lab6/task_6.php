@@ -9,7 +9,11 @@ function factorial($number)
 
 if (isset($_POST['number'])) {
     $number = $_POST['number'];
-    $result = factorial($number);
+    if ($number < 0) {
+        $result = 'Факториал не может быть отрицательным';
+    } else {
+        $result = factorial($number);
+    }
 }
 ?>
 

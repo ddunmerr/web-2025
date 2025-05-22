@@ -1,13 +1,12 @@
 <?php
-$users = json_decode(file_get_contents(__DIR__ . '/../json/users.json'), true);
-$posts = json_decode(file_get_contents(__DIR__ . '/../json/posts.json'), true);
+require_once(__DIR__ . '/../source/databaseConnection.php');
 
-function getUserById($users, $id)
+$connection = connectDatabase();
+$posts = getAllPosts($connection);
+
+function getUserById(PDO $connection, int $id): ?array
 {
-    foreach ($users as $user) {
-        if ($user['id'] == $id) return $user;
-    }
-    return null;
+    return findUserInDatabase($connection, $id);
 }
 ?>
 
@@ -40,7 +39,7 @@ function getUserById($users, $id)
         <main class="feed">
             <?php
             foreach ($posts as $post)
-                include(__DIR__ . '/../templates/post.php');
+                require(__DIR__ . '/../templates/post.php');
             ?>
         </main>
 
