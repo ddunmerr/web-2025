@@ -19,16 +19,20 @@ body {
 }
 
 .page {
+    display: flex;
+    flex-direction: column;
     max-width: 1440px;
+    width: 100%;
+    height: 100%;
     min-height: 100vh;
-    box-sizing: border-box;
-    margin: 0 auto;
+    margin: auto;
     position: relative;
     background: #FFFFFF;
-    display: grid;
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     height: 100%;
     left: 0;
@@ -38,14 +42,14 @@ body {
     z-index: 1;
 }
 
-.icons-list {
+.sidebar__icons-list {
     padding: 16px;
     margin-top: 40px;
     list-style: none;
 
 }
 
-.icon {
+.sidebar__icon {
     display: block;
     width: 40px;
     height: 40px;
@@ -55,22 +59,22 @@ body {
     cursor: pointer;
 }
 
-.icon--home {
+.sidebar__icon--home {
     background-image: url(/icons/home.svg);
 }
 
-.icon--profile {
+.sidebar__icon--profile {
     background-image: url(/icons/profile.svg);
 }
 
-.icon--add {
+.sidebar__icon--add {
     background-image: url(/icons/add.svg);
 }
 
 /* Шапка */
 .header {
     width: 100%;
-    height: 7%;
+    height: 7.6vh;
     background: #FFFFFF;
     position: fixed;
     top: 0;
@@ -81,18 +85,21 @@ body {
 /* Лента */
 .feed {
     box-sizing: content-box;
-    display: block;
+    display: flex;
+    flex-direction: column;
+
     min-width: 474px;
-    margin: 7% auto;
+    margin: 9vh auto;
 }
 
 .post {
+    width: 100%;
     margin: auto;
     margin-bottom: 30px;
     background: #FFFFFF;
 }
 
-.post-header {
+.post__header {
     position: relative;
     flex-direction: row;
     display: flex;
@@ -102,14 +109,14 @@ body {
     white-space: nowrap;
 }
 
-.post-author {
+.post__author {
     margin: 0 auto 0 0;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.user-avatar {
+.post__user-avatar {
     height: 32px;
     width: 32px;
     display: block;
@@ -117,7 +124,7 @@ body {
     object-fit: cover;
 }
 
-.user-name {
+.post__user-name {
     color: black;
     text-decoration: none;
     margin-left: 10px;
@@ -130,7 +137,7 @@ body {
     vertical-align: middle;
 }
 
-.post-text {
+.post__descr {
     width: 100%;
     margin-top: 16px;
     margin-bottom: 0px;
@@ -139,11 +146,10 @@ body {
     letter-spacing: -0.15px;
     font-weight: 400;
     font-style: normal;
-    white-space: 100%;
     text-align: justify;
 }
 
-.post-time {
+.post__time {
     margin-top: 8px;
     color: rgba(34, 34, 34, 0.5);
     font-size: 14px;
@@ -152,7 +158,7 @@ body {
     font-weight: 400px;
 }
 
-.edit-button {
+.post__edit-button {
     position: relative;
     height: 24px;
     width: 24px;
@@ -165,7 +171,7 @@ body {
     border: none;
 }
 
-.post-image {
+.post__image {
     margin-top: 16px;
     width: 100%;
     height: auto;
@@ -173,17 +179,16 @@ body {
     object-fit: contain;
 }
 
-.post-footter {
+.post__footer {
     position: relative;
     flex-direction: row;
     display: flex;
-    margin: 16px 0 0;
     width: 100%;
     justify-content: space-between;
     white-space: nowrap;
 }
 
-.like-button {
+.post__like-button {
     text-wrap: nowrap;
     margin-top: 16px;
     border: none;
@@ -193,13 +198,13 @@ body {
     padding: 6px 12px;
 }
 
-.like-counter {
+.post__like-counter {
     font-size: 15px;
     vertical-align: middle;
     width: fit-content;
 }
 
-.like-img {
+.post__like-img {
     width: 16px;
     height: 18px;
     vertical-align: middle;

@@ -19,13 +19,12 @@ $posts = getAllPosts($connection);
 
 <body>
     <div class="page">
-
         <!-- Сайдбар -->
         <div class="sidebar">
-            <ul class="icons-list">
-                <li><a class="icon icon--home"></a></li>
-                <li><a href="/pages/profile.php" class="icon icon--profile"></a></li>
-                <li><a href="/pages/addPost.php" class="icon icon--add"></a></li>
+            <ul class="sidebar__icons-list">
+                <li><a class="sidebar__icon sidebar__icon--home"></a></li>
+                <li><a href="/pages/profile.php" class="sidebar__icon sidebar__icon--profile"></a></li>
+                <li><a href="/pages/addPost.php" class="sidebar__icon sidebar__icon--add"></a></li>
             </ul>
         </div>
 
