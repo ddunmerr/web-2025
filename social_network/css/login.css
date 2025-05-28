@@ -12,25 +12,24 @@
 }
 
 body {
-    margin: 0 auto;
+
     background: #FFFFFF;
     overflow-y: auto;
 }
 
 .page {
     display: flex;
+    flex-direction: column;
     max-width: 1440px;
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    box-sizing: border-box;
-    margin: 0 auto;
+    margin: auto;
     position: relative;
     background: #FFFFFF;
-    padding-right: 17px;
 }
 
-.background-image {
+.page__background-image {
     position: absolute;
     width: 462.08px;
     height: 501px;
@@ -41,7 +40,7 @@ body {
 }
 
 /* Заголовок "Войти" */
-.page-title {
+.page__title {
     position: relative;
     width: 385px;
     height: 180px;
@@ -56,18 +55,20 @@ body {
 }
 
 /* Форма входа */
-.login-form {
+.auth-form {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     width: 343px;
     height: 251px;
     left: 838px;
     top: 415px;
-    display: flex;
-    flex-direction: column;
+
+
     gap: 32px;
 }
 
-.field {
+.auth-form__field {
     height: 88px;
     width: 343px;
     display: flex;
@@ -75,7 +76,7 @@ body {
     gap: 5px;
 }
 
-.field label {
+.auth-form__label {
     font-size: 15px;
     line-height: 18px;
     color: #222222;
@@ -83,7 +84,7 @@ body {
     letter-spacing: -0.15px;
 }
 
-.field input {
+.auth-form__input {
     padding: 13px 12px;
     background: #F2F3F5;
     border-radius: 10px;
@@ -95,15 +96,15 @@ body {
     box-sizing: border-box;
 }
 
-.field input:focus {
+.auth-form__field input:focus {
     outline-color: #3F8AE0;
 }
 
-.field input:invalid {
+.auth-form__field input:invalid {
     outline-color: #E64646;
 }
 
-.input-description {
+.auth-form__description {
     font-size: 13px;
     line-height: 16px;
     height: 16px;
@@ -113,7 +114,7 @@ body {
 }
 
 /* Кнопка "Продолжить" */
-.continue-button {
+.auth-form__continue-button {
     padding: 16px 16px;
     width: 343px;
     height: 48px;
@@ -128,6 +129,6 @@ body {
     transition: background 0.3s ease;
 }
 
-.continue-button:hover {
+.auth-form__continue-button:hover {
     background: #444444;
 }
