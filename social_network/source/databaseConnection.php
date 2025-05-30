@@ -50,6 +50,9 @@ function getUserPosts(PDO $connection, int $userId): array
         FROM post AS p
         JOIN carousel AS c ON p.id_carousel = c.id
         WHERE p.id_user = $userId
+        ORDER BY p.publish_date DESC
+
+        
     SQL;
     $statement = $connection->query($query);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
