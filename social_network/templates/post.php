@@ -6,7 +6,7 @@ if (!$user) {
 }
 ?>
 
-<div class="post">
+<div class="post" data-post-id="<?= $post['id'] ?>">
     <div class="post__header">
         <span class="post__author">
             <img class="post__user-avatar" src="<?= $user['avatar'] ?>">
@@ -16,7 +16,9 @@ if (!$user) {
         </span>
         <button class="post__edit-button"></button>
     </div>
-    <img class="post__image" src="<?= $post['image_1'] ?>" alt="Пост пользователя">
+    <?php
+    require(__DIR__ . '/../templates/carousel.php');
+    ?>
     <div class="post__footer">
         <button class="post__like-button">
             <img class="post__like-img" src="/icons/like.svg">
@@ -24,7 +26,10 @@ if (!$user) {
         </button>
     </div>
     <?php if (!empty($post['descr'])): ?>
-        <p class="post__descr"><?= $post['descr'] ?></p>
+        <div class="post__text-wrapper">
+            <p class="post__descr"><?= htmlspecialchars($post['descr']) ?></p>
+            <button class="post__toggle-btn" style="display: none;">ещё</button>
+        </div>
     <?php endif; ?>
     <p class="post__time"><?= date("d.m.Y H:i", strtotime($post['publish_date'])) ?></p>
 </div>

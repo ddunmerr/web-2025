@@ -34,8 +34,24 @@ $posts = getAllPosts($connection);
         <!-- Лента -->
         <form class="feed">
             <div class="photo-frame">
+                <input type="file" id="photoInput" accept="image/*" multiple style="display: none;">
+
                 <p class="picture-emoji">🖼</p>
                 <button class="add-button-first">Добавить фото</button>
+                <div class="post__carousel">
+
+                    <p class="post__indicator"></p>
+
+                    <!-- сюда JS вставит изображения -->
+
+
+                    <div class="post__navigation">
+                        <button class="post__carousel-button post__carousel-button--prev"></button>
+                        <button class="post__carousel-button post__carousel-button--next"></button>
+                    </div>
+
+
+                </div>
             </div>
             <button class="add-button-second">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,6 +67,67 @@ $posts = getAllPosts($connection);
         </form>
 
     </div>
+    <script>
+        const photoInput = document.getElementById("photoInput");
+        const addButtonFirst = document.querySelector(".add-button-first");
+        const previewContainer = document.querySelector(".post__carousel");
+        const indicator = document.querySelector(".post__indicator");
+        const navPrev = document.querySelector(".post__carousel-button--prev");
+        const navNext = document.querySelector(".post__carousel-button--next");
+        let currentImageIndex = 0;
+        const images = [];
+
+        addButtonFirst.addEventListener("click", (e) => {
+            e.preventDefault();
+            photoInput.click();
+        });
+
+        photoInput.addEventListener("change", (e) => {
+            const files = Array.from(e.target.files);
+            images.length = 0;
+            previewContainer.querySelectorAll(".post__image").forEach(el => el.remove());
+
+            files.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    images.push(reader.result);
+
+                    const img = document.createElement("img");
+                    img.src = reader.result;
+                    img.className = "post__image";
+                    img.style.display = "none";
+                    previewContainer.insertBefore(img, previewContainer.querySelector(".post__navigation"));
+
+                    if (images.length === files.length) {
+                        currentImageIndex = 0;
+                        showImage(currentImageIndex);
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
+        function showImage(index) {
+            const allImages = previewContainer.querySelectorAll(".post__image");
+            allImages.forEach((img, i) => {
+                img.style.display = i === index ? "block" : "none";
+            });
+            if (indicator) indicator.textContent = `${index + 1}/${allImages.length}`;
+        }
+
+        navPrev.addEventListener("click", () => {
+            if (images.length === 0) return;
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        });
+
+        navNext.addEventListener("click", () => {
+            if (images.length === 0) return;
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        });
+    </script>
+
 </body>
 
 </html>

@@ -28,10 +28,38 @@
                 <input class="auth-form__input" type="password" id="password" required>
             </div>
             <!--a href="pages/feed.php" class="continue-button"> Войти </a-->
-            <button onclick="window.location.href='pages/feed.php'" type="submit"
+            <button type="submit"
                 class="auth-form__continue-button">Продолжить</button>
         </form>
     </div>
+    <script>
+        document.querySelector('.auth-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            const res = await fetch('/api/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+
+            const result = await res.json();
+
+            if (res.status === 200) {
+                window.location.href = '/pages/feed.php';
+            } else {
+                alert(result.message || 'Ошибка входа');
+            }
+        });
+    </script>
+
 </body>
 
 </html>

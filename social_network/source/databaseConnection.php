@@ -22,7 +22,7 @@ function getAllPosts(PDO $connection): array
 {
     $query = <<<SQL
         SELECT 
-            p.id, p.id_user, p.descr, p.likes, p.publish_date, c.image_1
+            p.id, p.id_user, p.descr, p.likes, p.publish_date, c.image_1, c.image_2, c.image_3, c.image_4, c.image_5
         FROM post AS p
         JOIN carousel AS c ON p.id_carousel = c.id
         ORDER BY p.publish_date DESC
@@ -46,7 +46,7 @@ function getUserPosts(PDO $connection, int $userId): array
 {
     $query = <<<SQL
         SELECT 
-            p.id, p.descr, p.likes, p.publish_date, c.image_1
+            p.id, p.descr, p.likes, p.publish_date, c.image_1, c.image_2, c.image_3, c.image_4, c.image_5
         FROM post AS p
         JOIN carousel AS c ON p.id_carousel = c.id
         WHERE p.id_user = $userId

@@ -6,4 +6,4 @@ const users = [
 
 var names = users.map(user => user.name);
 
-console.log(names); // ["Alice", "Bob", "Charlie"]
+console.log(names); 
