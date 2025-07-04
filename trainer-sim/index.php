@@ -1,7 +1,6 @@
 <?php
 // Файл для хранения состояния устройства
 $stateFile = __DIR__ . '/device_state.json';
-// Загрузка состояния, либо инициализация
 if (file_exists($stateFile)) {
     $state = json_decode(file_get_contents($stateFile), true);
 } else {
