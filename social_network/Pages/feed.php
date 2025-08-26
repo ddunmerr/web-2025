@@ -15,7 +15,8 @@ $posts = getAllPosts($connection);
     <link rel="stylesheet" href="/css/feed.css">
     <script src="/js/carousel.js" defer></script>
     <script src="/js/modal.js" defer></script>
-
+    <script src="/js/likes.js" defer></script>
+    <script src="/js/reveal.js" defer></script>
 
 </head>
 
@@ -24,7 +25,7 @@ $posts = getAllPosts($connection);
         <!-- Сайдбар -->
         <div class="sidebar">
             <ul class="sidebar__icons-list">
-                <li><a class="sidebar__icon sidebar__icon--home" href="/"></a></li>
+                <li><a class="sidebar__icon sidebar__icon--home" href="/pages/feed.php"></a></li>
                 <li><a href="/pages/profile.php" class="sidebar__icon sidebar__icon--profile"></a></li>
                 <li><a href="/pages/addPost.php" class="sidebar__icon sidebar__icon--add"></a></li>
             </ul>
@@ -47,7 +48,6 @@ $posts = getAllPosts($connection);
         <div class="content">
             <button class="content__close-button" aria-label="Закрыть модальное окно"></button>
             <div class="modal-carousel">
-                <!-- Картинки rвставятся динамически -->
             </div>
             <div class="post__navigation">
                 <button class="post__carousel-button post__carousel-button--prev"></button>

@@ -28,8 +28,12 @@ if (!$user) {
     <?php if (!empty($post['descr'])): ?>
         <div class="post__text-wrapper">
             <p class="post__descr"><?= htmlspecialchars($post['descr']) ?></p>
-            <button class="post__toggle-btn" style="display: none;">ещё</button>
+            <button class="post__reveal-button">ещё</button>
         </div>
     <?php endif; ?>
     <p class="post__time"><?= date("d.m.Y H:i", strtotime($post['publish_date'])) ?></p>
+
+
+
+
 </div>

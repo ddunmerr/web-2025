@@ -6,11 +6,13 @@ function connectDatabase(): PDO
     $user = 'root';
     return new PDO($dsn, $user);
 }
+
 function findPostInDatabase(PDO $connection, int $id): ?array
 {
     $query = <<<SQL
         SELECT 
-            id, id_user, descr, likes, publish_date 
+            id, id_user, descr, likes, publish_date,
+            image_1, image_2, image_3, image_4, image_5
         FROM post 
         WHERE id = $id
     SQL;
@@ -18,18 +20,20 @@ function findPostInDatabase(PDO $connection, int $id): ?array
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     return $row ?: null;
 }
+
 function getAllPosts(PDO $connection): array
 {
     $query = <<<SQL
         SELECT 
-            p.id, p.id_user, p.descr, p.likes, p.publish_date, c.image_1, c.image_2, c.image_3, c.image_4, c.image_5
+            p.id, p.id_user, p.descr, p.likes, p.publish_date,
+            p.image_1, p.image_2, p.image_3, p.image_4, p.image_5
         FROM post AS p
-        JOIN carousel AS c ON p.id_carousel = c.id
         ORDER BY p.publish_date DESC
     SQL;
     $statement = $connection->query($query);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
 function findUserInDatabase(PDO $connection, int $id): ?array
 {
     $query = <<<SQL
@@ -42,17 +46,16 @@ function findUserInDatabase(PDO $connection, int $id): ?array
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     return $row ?: null;
 }
+
 function getUserPosts(PDO $connection, int $userId): array
 {
     $query = <<<SQL
         SELECT 
-            p.id, p.descr, p.likes, p.publish_date, c.image_1, c.image_2, c.image_3, c.image_4, c.image_5
+            p.id, p.descr, p.likes, p.publish_date,
+            p.image_1, p.image_2, p.image_3, p.image_4, p.image_5
         FROM post AS p
-        JOIN carousel AS c ON p.id_carousel = c.id
         WHERE p.id_user = $userId
         ORDER BY p.publish_date DESC
-
-        
     SQL;
     $statement = $connection->query($query);
     return $statement->fetchAll(PDO::FETCH_ASSOC);

@@ -12,7 +12,7 @@ function showModalImage(index) {
     modalImages.forEach((img, i) => {
         img.style.display = (i === index) ? 'block' : 'none';
     });
-    modalIndicator.textContent = `${index + 1} из${modalImages.length}`
+    modalIndicator.textContent = `${index + 1} из ${modalImages.length}`
 }
 
 function handleEscape(e) {
@@ -42,7 +42,7 @@ document.querySelectorAll('.post').forEach(post => {
             img.style.display = (i === index) ? 'block' : 'none';
         });
         if (indicator) {
-            indicator.textContent = `${index + 1} из ${images.length}`;
+            indicator.textContent = `${index + 1} из  ${images.length}`;
         }
     }
 
