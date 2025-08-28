@@ -1,5 +1,7 @@
 <?php
 require_once(__DIR__ . '/../source/databaseConnection.php');
+require_once __DIR__ . '/../source/auth.php';
+$user = authByCookie(); // Проверка сессии и пользователя
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -14,6 +16,8 @@ if (!isset($_POST['data'])) {
 }
 
 $data = json_decode($_POST['data'], true);
+$data['id_user'] = $user['id'];
+
 if (!$data || !isset($data['descr'])) {
     echo json_encode(['error' => 'Неверный JSON']);
     exit;

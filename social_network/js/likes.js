@@ -1,27 +1,47 @@
-document.querySelectorAll('.like-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const post = button.closest('.post');
-        const postId = post.dataset.postId;
-        const icon = button.querySelector('.like-icon');
-        const countEl = button.querySelector('.like-count');
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".post__like-button").forEach(button => {
+        button.addEventListener("click", async () => {
+            const post = button.closest(".post");
+            const postId = post.dataset.postId;
+            const counter = button.querySelector(".post__like-counter");
 
-        fetch('/like.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `id=${postId}`
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    icon.textContent = data.liked ? '❤️' : '♡';
-                    countEl.textContent = data.likes;
-                    alert(data.liked ? 'Вы лайкнули этот пост!' : 'Вы убрали лайк с этого поста!');
+            const hasLiked = button.classList.contains("liked");
+            const action = hasLiked ? "remove" : "add";
+
+            try {
+                const formData = new FormData();
+                formData.append("post_id", postId);
+                formData.append("action", action);
+
+                const response = await fetch("/api/like.php", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error("HTTP " + response.status);
+
+                const result = await response.json();
+
+                if (result.success) {
+                    counter.textContent = result.likes;
+                    button.classList.toggle("liked", action === "add");
                 } else {
-                    alert('Ошибка при обновлении лайка: ' + (data.error || 'неизвестная ошибка'));
+                    showError(post, result.error || "Ошибка");
                 }
-            })
-            .catch(() => {
-                alert('Ошибка соединения с сервером');
-            });
+            } catch (e) {
+                showError(post, "Сеть недоступна: " + e.message);
+            }
+        });
     });
 });
+
+function showError(post, text) {
+    let err = post.querySelector(".post__error");
+    if (!err) {
+        err = document.createElement("p");
+        err.className = "post__error";
+        err.style.color = "red";
+        post.appendChild(err);
+    }
+    err.textContent = text;
+}

@@ -131,9 +131,23 @@ body {
     background: #444444;
 }
 
+
+
+.auth-form__error-wrapper {
+    padding: 22px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    direction: ltr;
+    height: 48px;
+    width: 343px;
+
+}
+
 .auth-form__error {
-    visibility: hidden;
     padding: 13px 12px;
+    margin-left: 0;
+    position: absolute;
     background: #FFECEC;
     border-radius: 10px;
     border: none;
@@ -142,4 +156,12 @@ body {
     color: #222222;
     width: 100%;
     box-sizing: border-box;
+}
+
+.auth-form__error-hider {
+    margin: 0;
+    background-color: #FFFFFF;
+    position: absolute;
+    height: 48px;
+    width: 343px;
 }

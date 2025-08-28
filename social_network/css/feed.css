@@ -258,11 +258,17 @@ body {
 .post__like-button {
     text-wrap: nowrap;
     margin-top: 16px;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 8px;
     cursor: pointer;
     background-color: #f0f0f0;
     padding: 6px 12px;
+}
+
+.post__like-button.liked {
+    background-color: rgba(239, 83, 83, 0.05);
+    border-color: rgba(255, 0, 0, 0.19);
+    /* красный цвет при лайке */
 }
 
 .post__like-counter {

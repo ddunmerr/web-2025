@@ -4,6 +4,12 @@ if (!$user) {
     echo "<!-- пользователь не найден -->";
     return;
 }
+$liked = false;
+if (isset($_SESSION['user_id'])) {
+    $stmt = $connection->prepare("SELECT 1 FROM likes WHERE post_id = :post AND user_id = :user");
+    $stmt->execute([':post' => $post['id'], ':user' => $_SESSION['user_id']]);
+    $liked = (bool)$stmt->fetch();
+}
 ?>
 
 <div class="post" data-post-id="<?= $post['id'] ?>">
@@ -20,8 +26,8 @@ if (!$user) {
     require(__DIR__ . '/../templates/carousel.php');
     ?>
     <div class="post__footer">
-        <button class="post__like-button">
-            <img class="post__like-img" src="/icons/like.svg">
+        <button class="post__like-button <?= $liked ? 'liked' : '' ?>">
+            <img class="post__like-img" src="/icons/like.svg" alt="Лайк">
             <span class="post__like-counter"><?= $post['likes'] ?></span>
         </button>
     </div>
