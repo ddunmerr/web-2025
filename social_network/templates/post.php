@@ -14,7 +14,7 @@ if (!$user) {
                 <?= $user['first_name'] . ' ' . $user['second_name'] ?>
             </a>
         </span>
-        <button class="post__edit-button"></button>
+        <button type="button" onclick="location.href='/pages/addPost.php?id=<?= $post['id'] ?>'" class="post__edit-button"></button>
     </div>
     <?php
     require(__DIR__ . '/../templates/carousel.php');
